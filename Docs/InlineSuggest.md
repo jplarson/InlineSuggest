@@ -1,7 +1,7 @@
 InlineSuggest
 ===========
 
-![Screenshot](http://www.jpl-consulting.com/projects/MooTools/TableSorter/ScreenShots/InlineSuggest0.gif)
+![Screenshot](http://www.jpl-consulting.com/projects/MooTools/InlineSuggest/ScreenShots/InlineSuggest0.gif)
 
 Add auto-suggest functionality to any input or textarea.
 
