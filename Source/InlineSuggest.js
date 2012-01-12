@@ -40,13 +40,17 @@ var InlineSuggest = new Class({
 	
 	acceptSuggestion: function(event) {
 		if(!this.suggestionIsPending) return;
+		if(this.input.getSelectedText() == '') {
+			this.suggestionIsPending = false;
+			return;
+		}
 		if([9, 13].contains(event.code)) { // tab or enter
 			var selectEnd = this.input.getSelectionEnd();
 			this.input.selectRange(selectEnd, selectEnd);
 			this.suggestionIsPending = false;
 			event.preventDefault();
 		}
-		if([38, 40].contains(event.code)) { // up or down arrow
+		if([38, 40].contains(event.event.keyCode)) { // up or down arrow
 			direction = (event.code == 38 ? -1 : 1); // up is backwards in the alphabetical suggest item list
 			this.makeSuggestionFrom(this.pendingSuggestionIndex + direction, direction);
 			event.preventDefault();
