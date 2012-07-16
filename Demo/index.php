@@ -1,8 +1,8 @@
 <?
-	switch($_REQUEST['a']) {
-		default:		DisplayDemoPage();
-	}
+	DisplayDemoPage();
 	exit();
+	
+	
 function DisplayDemoPage() {
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
@@ -247,7 +247,9 @@ Zimbabwe</textarea><br />
 <script type="text/javascript">
 	App = {};
 	window.addEvent('domready', function() {
-		App.suggester = new InlineSuggest('theTextarea', $('theSuggestions').value.split('\n'), { minLengthMatch: 2 });
+		App.suggester = new InlineSuggest('theTextarea', $('theSuggestions').value.split('\n'), { minLengthMatch: 2,
+			exemptSet: ['van', 'unit']
+		 });
 	});
 	function updateSuggestions(theTextarea) {
 		App.suggester.setSuggestions(theTextarea.value.split('\n'));
