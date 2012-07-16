@@ -24,7 +24,7 @@ By default, inline suggestions are made only if a prefix of 3 or more characters
 	var suggest = new TableSorter('dataTable', { minLengthMatch: 2 });  // suggestions will be made with only two matching characters.
 	
 
-Dependancies
+Dependencies
 ------------
 	core:1.4.2/Events
 	core:1.4.2/Options
